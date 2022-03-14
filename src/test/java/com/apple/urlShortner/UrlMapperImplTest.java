@@ -29,13 +29,13 @@ public class UrlMapperImplTest {
 
 	@Before
 	public void setUp() {
+		_urlMapperImpl = Mockito.spy(new UrlMapperImpl());
 		when(_redisTemplate.opsForValue()).thenReturn(_valueOperations);
 		Mockito.doNothing().when(_valueOperations).set(anyString(), any(Url.class));
 	}
 
 	@Test
 	public void testShortUrl() {
-		_urlMapperImpl = Mockito.spy(new UrlMapperImpl());
 		String url = "www.apple.com";
 		Url shortUrl = _urlMapperImpl.shortUrl(url);
 		assertNotNull(shortUrl);

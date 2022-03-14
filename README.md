@@ -1,17 +1,20 @@
 # Cli application to shorten a given url
-## UrlShortner
+## UrlShortner ##
 Given a lengthy URL shortens it
 
-## Technologies
+### Assumptions ###
+The url will not contain a scheme **https://** or a **http://**
+
+## Technologies ##
 Springboot
 Redis to serve cache memory
 
-###Steps to install
-###Running redis server
+### Steps to install ###
+### Running redis server ###
 
 brew install redis
 
-###Start redis
+### Start redis ###
 
 redis-server
 
@@ -20,7 +23,7 @@ redis-cli
 
 The application is built on springboot and defaults to 8080
 
-####APIS to run
+#### APIS to run ####
 Method **POST**
 
 **localhost:8080/shortUrl/www.apple.com/**
@@ -34,7 +37,7 @@ Gives you
 }
 ```
 
-####Using the key to find the url
+#### Using the key to find the url ####
 
 Method **GET**
 
